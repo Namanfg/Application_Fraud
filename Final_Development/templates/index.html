@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LLM Suspect Dectector - LSD</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Submit Your Details</h1>
+
+    <!-- FORM -->
+    <div class="form-container" id="formContainer">
+      <label>Full Name:</label>
+      <input type="text" id="full_name" placeholder="Your Name" />
+
+      <label>Country:</label>
+      <input type="text" id="country" placeholder="Your Country" />
+
+      <label>Birthdate or Age:</label>
+      <input type="text" id="dob" placeholder="YYYY-MM-DD or Unknown" />
+
+      <button id="submitBtn">Submit</button>
+    </div>
+
+    <!-- OUTPUT -->
+    <div class="output-container" id="outputContainer">
+      <div class="output-item">
+        <strong>Name:</strong> <span id="outputName"></span>
+      </div>
+      <div class="output-item">
+        <strong>Country Name:</strong> <span id="outputCountryName"></span>
+      </div>
+      <div class="output-item">
+        <strong>Age:</strong> <span id="outputAge"></span>
+      </div>
+      <div class="output-item">
+        <strong>Score:</strong> <span id="outputScore"></span>
+      </div>
+      <div class="output-item">
+        <strong>Summary:</strong>
+        <p id="outputSummary"></p>
+      </div>
+      <div class="output-item">
+        <strong>Source:</strong>
+        <p id="outputSource"></p>
+      </div>
+      <button id="backBtn">Back</button>
+    </div>
+
+    <!-- Loader -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loader-text">Please wait a few seconds...</div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
