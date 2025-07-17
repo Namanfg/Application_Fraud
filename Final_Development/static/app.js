@@ -2,13 +2,14 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
   const full_name = document.getElementById('full_name').value;
   const country = document.getElementById('country').value;
   const dob = document.getElementById('dob').value;
+  const city = document.getElementById('city').value;
 
   document.getElementById('loadingOverlay').classList.add('show');
 
   const response = await fetch('/api/submit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ full_name, country, dob })
+    body: JSON.stringify({ full_name, country, dob, city })
   });
 
   const data = await response.json();
